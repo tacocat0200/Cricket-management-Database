@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add</title>
+</head>
+<body>
+	<h1>Add a New Player</h1>
+	<form action="add_player.php" method="post">
+		<label for="player_id">Player ID:</label>
+		<input type="text" id="player_id" name="player_id" required><br><br>
+		<label for="player_name">Player Name(FN_LN):</label>
+		<input type="text" id="player_name" name="player_name" required><br><br>
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age" required><br><br>
+		<label for="position">Position:</label>
+		<input type="text" id="position" name="position" required><br><br>
+		<label for="team_id">Team ID:</label>
+		<input type="text" id="team_id" name="team_id" required><br><br>
+		<input type="submit" value="Add Player">
+	</form>
+    <h1>Add a new match</h1>
+    <form method="POST" action="process_new_match.php">
+      <label for="match_id">Match ID:</label>
+      <input type="text" id="match_id" name="match_id"><br><br>
+
+      <label for="match_date">Match Date:</label>
+      <input type="date" id="match_date" name="match_date"><br><br>
+
+      <label for="venue">Venue:</label>
+      <input type="text" id="venue" name="venue"><br><br>
+
+      <label for="team_1_id">Team 1 ID:</label>
+      <input type="text" id="team_1_id" name="team_1_id"><br><br>
+
+      <label for="team_2_id">Team 2 ID:</label>
+      <input type="text" id="team_2_id" name="team_2_id"><br><br>
+
+      <label for="winner_id">Winner ID:</label>
+      <input type="text" id="winner_id" name="winner_id"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <h1>New Team Entry Form</h1>
+    <form method="POST" action="process_new_team.php">
+      <label for="team_id">Team ID:</label>
+      <input type="text" id="team_id" name="team_id"><br><br>
+
+      <label for="team_name">Team Name:</label>
+      <input type="text" id="team_name" name="team_name"><br><br>
+
+      <label for="coach_name">Coach Name(FN_LN):</label>
+      <input type="text" id="coach_name" name="coach_name"><br><br>
+
+      <label for="home_ground">Home Ground:</label>
+      <input type="text" id="home_ground" name="home_ground"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <h1>Show Matches</h1>
+	<button onclick="loadMatches()">Show Matches</button>
+
+	<div id="matchTable"></div>
+
+	<script>
+		function loadMatches() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("matchTable").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "match_table.php", true);
+			xhttp.send();
+		}
+	</script>
+
+    <h1>Show Teams</h1>
+    <form action="show_teams.php" method="post">
+    <input type="submit" name="submit" value="Show All Teams">
+    </form>
+
+    <h1>Show Players</h1>
+	<button onclick="showPlayers()">Show Players</button>
+
+	<script>
+		function showPlayers() {
+			window.location.href = "show_players.php";
+		}
+	</script>
+</body>
+</html>
