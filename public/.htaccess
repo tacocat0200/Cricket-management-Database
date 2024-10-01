@@ -1,0 +1,30 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# RewriteBase specifies the base URL for the rewrites
+RewriteBase /
+
+# Redirect to the index.php file
+RewriteRule ^index\.php$ - [L]
+
+# Redirect everything to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Prevent access to .env file
+<Files .env>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Enable CORS (if needed)
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Deny access to specific files
+<FilesMatch "\.(ini|log|txt|md)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
