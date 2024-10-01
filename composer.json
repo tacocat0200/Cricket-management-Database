@@ -1,0 +1,35 @@
+{
+    "name": "yourname/player-stats-manager",
+    "description": "A web application to manage player statistics, team rosters, and match schedules.",
+    "type": "project",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "monolog/monolog": "^2.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "doctrine/orm": "^2.10",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

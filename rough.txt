@@ -1,0 +1,57 @@
+
+your-project/
+├── README.md
+├── .gitignore
+├── composer.json--------------------------
+├── public/
+│   ├── index.php--------------------------
+│   ├── .htaccess--------------------------
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── styles.css-----------------
+│   │   ├── js/
+│   │   │   └── scripts.js-----------------
+│   │   └── images/
+│   │       └── logo.png
+│   └── uploads/
+│       └── player_photos/
+├── src/
+│   ├── controllers/
+│   │   ├── PlayerController.php------------
+│   │   ├── TeamController.php--------------
+│   │   └── MatchController.php-------------
+│   ├── models/
+│   │   ├── Player.php----------------------
+│   │   ├── Team.php------------------------
+│   │   └── Match.php-----------------------
+│   ├── views/
+│   │   ├── templates/
+│   │   │   ├── header.php------------------
+│   │   │   └── footer.php------------------
+│   │   ├── players/
+│   │   │   ├── list.php--------------------
+│   │   │   └── profile.php-----------------
+│   │   ├── teams/
+│   │   │   ├── list.php--------------------
+│   │   │   └── roster.php------------------
+│   │   └── matches/
+│   │       ├── schedule.php----------------
+│   │       └── results.php-----------------
+│   └── helpers/
+│       └── utils.php-----------------------
+├── config/
+│   ├── config.php--------------------------
+│   └── database.php------------------------
+├── database/
+│   ├── migrations/
+│   │   └── create_tables.sql---------------
+│   ├── seeds/
+│   │   └── seed_data.sql-------------------
+│   └── backups/
+├── tests/
+│   ├── Unit/
+│   │   └── PlayerTest.php------------------
+│   └── Integration/
+│       └── DatabaseTest.php----------------
+└── vendor/
+    └── (Composer dependencies)
